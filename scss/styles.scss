@@ -1,0 +1,822 @@
+// ==========================================
+// BOOTSTRAP SASS FILES
+// ==========================================
+
+@import "../vendor/bootstrap/scss/functions";
+@import "../vendor/bootstrap/scss/variables";
+@import "../vendor/bootstrap/scss/variables-dark";
+@import "../vendor/bootstrap/scss/maps";
+@import "../vendor/bootstrap/scss/mixins";
+
+
+
+// ==========================================
+// MY VARIABLES AND MIXINS
+// ==========================================
+
+@import "variables";
+@import "mixins";
+
+
+
+// ==========================================
+// MY PARTIALS
+// ==========================================
+
+@import "reset";
+@import "menu";
+@import "home";
+@import "about";
+@import "education";
+@import "skills";
+@import "portfolio";
+@import "contact";
+@import "responsive";
+
+
+
+// ==========================================
+// GLOBAL STYLES
+// ==========================================
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    padding-top: 90px;
+
+    background: #1f1f1f;
+
+    color: #ffffff;
+
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    line-height: 1.5;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+
+
+// ==========================================
+// HEADER
+// ==========================================
+
+header {
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 9999;
+}
+
+
+
+// ==========================================
+// MAIN
+// ==========================================
+
+main {
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #1f1f1f;
+
+    transition:
+        background 0.4s ease;
+}
+
+
+
+// ==========================================
+// SECTIONS
+// ==========================================
+
+section {
+    width: 100%;
+
+    scroll-margin-top: 100px;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+
+
+// ==========================================
+// DEFAULT DARK THEME
+// ==========================================
+
+
+// Home
+.home {
+    background: #272727;
+
+    color: #ffffff;
+}
+
+
+// About
+.about {
+    background: #202020;
+
+    color: #ffffff;
+}
+
+
+// Education
+.education {
+    background: #272727;
+
+    color: #ffffff;
+}
+
+
+// Skills
+.skills {
+    background: #202020;
+
+    color: #ffffff;
+}
+
+
+// Portfolio
+.portfolio {
+    background: #272727;
+
+    color: #ffffff;
+}
+
+
+// Contact
+.contact-details {
+    background: #202020;
+
+    color: #ffffff;
+}
+
+
+
+// ==========================================
+// DARK THEME CARDS
+// ==========================================
+
+.about_content,
+.education_item,
+.skills_item,
+.portfolio_item {
+
+    background: #2d2d2d;
+
+    color: #ffffff;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+
+// ==========================================
+// DARK THEME TEXT
+// ==========================================
+
+.about_content h3,
+.education_item h3,
+.education_item h4,
+.skills_item h3 {
+
+    color: #ffffff;
+}
+
+
+
+// ==========================================
+// DARK SKILL TAGS
+// ==========================================
+
+.skills_tags {
+
+    span {
+        background: #2d2d2d;
+
+        color: #ffffff;
+
+        border-color: #777777;
+    }
+}
+
+
+
+// ==========================================
+// DARK CONTACT INTRO
+// ==========================================
+
+.contact-intro {
+
+    h2 {
+        color: #ffffff;
+    }
+
+
+    .contact-intro_text {
+        color: #cccccc;
+    }
+}
+
+
+
+// ==========================================
+// FOOTER DEFAULT DARK
+// ==========================================
+
+footer {
+    text-align: center;
+
+    padding: 2rem;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+
+
+    p {
+        margin: 0;
+    }
+}
+
+
+
+// ==========================================
+// LIGHT THEME
+// ==========================================
+
+body.light-theme {
+
+    background: #ffffff;
+
+    color: #222222;
+
+
+
+    // ======================================
+    // MAIN BACKGROUND
+    // ======================================
+
+    main {
+        background: #ffffff;
+    }
+
+
+
+    // ======================================
+    // HOME
+    // ======================================
+
+    .home {
+        background: #ffffff;
+
+        color: #222222;
+
+
+        &_title {
+            color: #222222;
+
+
+            span {
+                color: $secondary-color;
+            }
+        }
+
+
+        &_subtitle {
+            color: #222222;
+        }
+
+
+        &_text {
+            color: #444444;
+        }
+    }
+
+
+
+    // ======================================
+    // ABOUT
+    // ======================================
+
+    .about {
+        background: #f5f5f5;
+
+        color: #222222;
+
+
+        &_title {
+            color: $secondary-color;
+        }
+
+
+        &_content {
+            background: #ffffff;
+
+            color: #222222;
+
+
+            h3 {
+                color: #222222;
+            }
+
+
+            p {
+                color: #444444;
+            }
+        }
+    }
+
+
+
+    // ======================================
+    // EDUCATION
+    // ======================================
+
+    .education {
+        background: #ffffff;
+
+        color: #222222;
+
+
+        &_title {
+            color: $secondary-color;
+        }
+
+
+        &_item {
+            background: #f5f5f5;
+
+            color: #222222;
+
+
+            h3,
+            h4 {
+                color: #222222;
+            }
+
+
+            p {
+                color: #444444;
+            }
+        }
+    }
+
+
+
+    // ======================================
+    // SKILLS
+    // ======================================
+
+    .skills {
+        background: #f5f5f5;
+
+        color: #222222;
+
+
+        &_title {
+            color: $secondary-color;
+        }
+
+
+        &_item {
+            background: #ffffff;
+
+            color: #222222;
+
+
+            h3 {
+                color: #222222;
+            }
+        }
+
+
+        &_value {
+            color: #222222;
+
+
+            span {
+                color: #222222;
+            }
+        }
+
+
+        &_tags {
+
+            span {
+                background: #ffffff;
+
+                color: #222222;
+
+                border-color: #555555;
+
+
+                &:hover {
+                    background: $secondary-color;
+
+                    color: #ffffff;
+
+                    border-color: $secondary-color;
+                }
+            }
+        }
+    }
+
+
+
+    // ======================================
+    // PORTFOLIO
+    // ======================================
+
+    .portfolio {
+        background: #ffffff;
+
+        color: #222222;
+
+
+        &_title {
+            color: $secondary-color;
+        }
+
+
+        &_item {
+            background: #f5f5f5;
+
+            color: #222222;
+        }
+
+
+        .portfolio_content {
+
+            h3 {
+                color: $secondary-color;
+            }
+
+
+            p {
+                color: #444444;
+            }
+        }
+    }
+
+
+
+    // ======================================
+    // CONTACT
+    // ======================================
+
+    .contact-details {
+        background: #f5f5f5;
+
+        color: #222222;
+
+
+        .contact-intro {
+
+            .contact-intro_label {
+                color: $secondary-color;
+
+                border-color: $secondary-color;
+            }
+
+
+            h2 {
+                color: #222222;
+            }
+
+
+            .contact-intro_text {
+                color: #555555;
+            }
+        }
+
+
+        .contact-card {
+            background: #ffffff;
+
+            color: #222222;
+
+            border-left-color: $secondary-color;
+
+
+            h2,
+            h3 {
+                color: #222222;
+            }
+
+
+            .contact-course {
+                color: #555555;
+            }
+
+
+            .contact-info {
+                border-top-color: #dddddd;
+
+
+                span {
+                    color: $secondary-color;
+                }
+
+
+                a {
+                    color: #222222;
+
+
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    // ======================================
+    // FOOTER
+    // ======================================
+
+    footer {
+        background: #eeeeee;
+
+        color: #222222;
+    }
+
+}
+
+
+
+// ==========================================
+// SMOOTH THEME TRANSITIONS
+// ==========================================
+
+.home,
+.about,
+.education,
+.skills,
+.portfolio,
+.contact-details,
+.about_content,
+.education_item,
+.skills_item,
+.portfolio_item,
+.contact-card,
+.contact-intro,
+footer,
+main {
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+
+// ==========================================
+// TABLET
+// ==========================================
+
+@media screen and (max-width: 960px) {
+
+    body {
+        padding-top: 82px;
+    }
+
+
+    section {
+        scroll-margin-top: 90px;
+    }
+
+}
+
+
+
+// ==========================================
+// MOBILE
+// ==========================================
+
+@media screen and (max-width: 540px) {
+
+    body {
+        padding-top: 75px;
+    }
+
+
+    section {
+        scroll-margin-top: 85px;
+    }
+
+}
+
+// ==========================================
+// SKILLS PERCENTAGE COLOR
+// ==========================================
+
+// Dark mode
+.skills_value,
+.skills_value span {
+    color: #ffffff;
+}
+
+
+// Light mode
+body.light-theme {
+
+    .skills_value,
+    .skills_value span {
+        color: #222222;
+    }
+
+}
+
+// ==========================================
+// ALWAYS SHOW HAMBURGER NAVIGATION
+// DESKTOP + TABLET + MOBILE
+// ==========================================
+
+.menu-btn {
+    display: block !important;
+}
+
+
+// Keep normal navigation hidden
+// until hamburger is clicked
+.nav {
+    position: absolute !important;
+
+    top: 78px !important;
+
+    right: 0 !important;
+    left: auto !important;
+
+    width: 280px !important;
+
+    display: block !important;
+
+    visibility: hidden !important;
+
+    opacity: 0 !important;
+
+    transform: translateY(-15px) !important;
+
+    pointer-events: none !important;
+}
+
+
+// Show navigation after clicking hamburger
+.nav.open {
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    transform: translateY(0) !important;
+
+    pointer-events: auto !important;
+}
+
+
+// Navigation should always be vertical dropdown
+.menu-nav {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    width: 100% !important;
+
+    padding: 1rem !important;
+
+    margin: 0 !important;
+
+    background: rgba(30, 30, 30, 0.98) !important;
+
+    border: 1px solid #444444 !important;
+
+    border-radius: 18px !important;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+
+.menu-nav_item {
+    width: 100% !important;
+}
+
+
+.menu-nav_link {
+    display: block !important;
+
+    width: 100% !important;
+
+    padding: 0.9rem 1rem !important;
+
+    text-align: left !important;
+}
+
+
+// ==========================================
+// LIGHT MODE DROPDOWN
+// ==========================================
+
+body.light-theme {
+
+    .menu-nav {
+        background: rgba(255, 255, 255, 0.98) !important;
+
+        border-color: #dddddd !important;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    }
+
+}
+
+
+// ==========================================
+// MOBILE
+// ==========================================
+
+@media screen and (max-width: 540px) {
+
+    .nav {
+        top: 70px !important;
+
+        right: 0 !important;
+
+        width: 100% !important;
+    }
+
+
+    .menu-nav_link {
+        text-align: center !important;
+    }
+
+}
+
+// ==========================================
+// ALWAYS KEEP HAMBURGER VISIBLE
+// ==========================================
+
+.menu-btn {
+    display: block !important;
+}
+// ==========================================
+// CONTACT TEXT COLORS
+// ==========================================
+
+// Dark mode
+.contact-intro {
+
+    h2 {
+        color: #ffffff !important;
+    }
+
+    .contact-intro_text {
+        color: #dddddd !important;
+    }
+
+}
+
+
+// Light mode
+body.light-theme {
+
+    .contact-intro {
+
+        h2 {
+            color: #222222 !important;
+        }
+
+        .contact-intro_text {
+            color: #555555 !important;
+        }
+
+    }
+
+}

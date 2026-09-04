@@ -1,0 +1,554 @@
+// ==========================================
+// HOME SECTION
+// ==========================================
+
+.home {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 6rem 1rem;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: $primary-color;
+
+    color: $light-color;
+
+
+
+    // Keep content above animation
+    .container {
+        position: relative;
+
+        z-index: 5;
+    }
+
+
+
+    // ======================================
+    // MOVING NETWORK CANVAS
+    // ======================================
+
+    .developer-network {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        z-index: 1;
+
+        pointer-events: none;
+    }
+
+
+
+    // ======================================
+    // BACKGROUND GLOW
+    // ======================================
+
+    &_glow {
+        position: absolute;
+
+        width: 550px;
+        height: 550px;
+
+        top: 50%;
+        right: -150px;
+
+        transform: translateY(-50%);
+
+        border-radius: 50%;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(255, 101, 47, 0.18) 0%,
+                rgba(255, 101, 47, 0.08) 35%,
+                transparent 70%
+            );
+
+        filter: blur(15px);
+
+        z-index: 2;
+
+        pointer-events: none;
+
+        animation: homeGlow 7s ease-in-out infinite;
+    }
+
+
+
+    // ======================================
+    // HOME CONTENT
+    // ======================================
+
+    &_content {
+        position: relative;
+
+        z-index: 5;
+    }
+
+
+
+    // Developer-style small text
+    &_intro {
+        display: inline-block;
+
+        margin-bottom: 1.3rem;
+
+        padding: 0.45rem 0.9rem;
+
+        color: $secondary-color;
+
+        border: 1px solid rgba(255, 101, 47, 0.55);
+
+        border-radius: 25px;
+
+        background: rgba(255, 101, 47, 0.07);
+
+        font-family: "Courier New", monospace;
+
+        font-size: 0.9rem;
+
+        font-weight: bold;
+
+        letter-spacing: 1px;
+    }
+
+
+
+    &_title {
+        margin-bottom: 1rem;
+
+        color: $light-color;
+
+        font-size: 3.6rem;
+
+        font-weight: bold;
+
+        line-height: 1.1;
+
+
+        span {
+            color: $secondary-color;
+        }
+    }
+
+
+
+    &_subtitle {
+        margin-bottom: 1.3rem;
+
+        color: $light-color;
+
+        font-size: 1.6rem;
+
+        font-weight: 600;
+    }
+
+
+
+    &_text {
+        max-width: 620px;
+
+        margin-bottom: 2rem;
+
+        color: #eeeeee;
+
+        font-size: 1.08rem;
+
+        line-height: 1.8;
+    }
+
+
+
+    // ======================================
+    // BUTTONS
+    // ======================================
+
+    &_buttons {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 1rem;
+    }
+
+
+
+    &_button {
+        display: inline-block;
+
+        padding: 0.95rem 1.6rem;
+
+        background: $secondary-color;
+
+        color: $light-color;
+
+        border: 2px solid $secondary-color;
+
+        border-radius: 8px;
+
+        text-decoration: none;
+
+        font-weight: 600;
+
+        @include transition-ease;
+
+
+        &:hover {
+            transform: translateY(-4px);
+
+            color: $light-color;
+
+            box-shadow:
+                0 8px 20px rgba(255, 101, 47, 0.3);
+        }
+    }
+
+
+
+    &_button-outline {
+        background: transparent;
+
+        color: $light-color;
+
+
+        &:hover {
+            background: $secondary-color;
+
+            color: $light-color;
+        }
+    }
+
+
+
+    // ======================================
+    // PROFILE IMAGE
+    // ======================================
+
+    &_image {
+        position: relative;
+
+        z-index: 5;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+    }
+
+
+
+    &_image-frame {
+        position: relative;
+
+        width: 100%;
+
+        max-width: 400px;
+
+
+        // Animated corner border
+        &::before {
+            content: "";
+
+            position: absolute;
+
+            top: -12px;
+            right: -12px;
+
+            width: 100%;
+            height: 100%;
+
+            border: 2px solid rgba(255, 101, 47, 0.45);
+
+            border-radius: 15px;
+
+            z-index: -1;
+
+            animation: imageBorder 4s ease-in-out infinite;
+        }
+
+
+
+        // Small glowing dot
+        &::after {
+            content: "";
+
+            position: absolute;
+
+            top: -18px;
+            right: -18px;
+
+            width: 12px;
+            height: 12px;
+
+            background: $secondary-color;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 10px $secondary-color,
+                0 0 25px rgba(255, 101, 47, 0.8);
+
+            animation: nodePulse 2s ease-in-out infinite;
+        }
+
+
+
+        img {
+            display: block;
+
+            width: 100%;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.45);
+
+            @include transition-ease;
+
+
+            &:hover {
+                transform: translateY(-6px);
+            }
+        }
+    }
+}
+
+
+
+// ==========================================
+// HOME ANIMATIONS
+// ==========================================
+
+@keyframes homeGlow {
+
+    0%,
+    100% {
+        transform:
+            translateY(-50%)
+            scale(1);
+
+        opacity: 0.7;
+    }
+
+
+    50% {
+        transform:
+            translateY(-50%)
+            scale(1.15);
+
+        opacity: 1;
+    }
+
+}
+
+
+
+@keyframes imageBorder {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+
+    50% {
+        transform: translate(8px, -8px);
+    }
+
+}
+
+
+
+@keyframes nodePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+
+        opacity: 0.6;
+    }
+
+
+    50% {
+        transform: scale(1.5);
+
+        opacity: 1;
+    }
+
+}
+
+
+
+// ==========================================
+// LIGHT THEME
+// ==========================================
+
+body.light-theme {
+
+    .home {
+        background: #ffffff;
+
+        color: #222222;
+
+
+
+        &_title {
+            color: #222222;
+
+
+            span {
+                color: $secondary-color;
+            }
+        }
+
+
+
+        &_subtitle {
+            color: #222222;
+        }
+
+
+
+        &_text {
+            color: #444444;
+        }
+
+
+
+        &_button-outline {
+            color: #222222;
+
+
+            &:hover {
+                color: #ffffff;
+            }
+        }
+
+
+
+        &_intro {
+            color: $secondary-color;
+
+            background: rgba(255, 101, 47, 0.07);
+        }
+    }
+
+}
+
+
+
+// ==========================================
+// TABLET
+// ==========================================
+
+@media screen and (max-width: 960px) {
+
+    .home {
+
+        &_title {
+            font-size: 2.9rem;
+        }
+
+
+        &_subtitle {
+            font-size: 1.35rem;
+        }
+
+
+        &_text {
+            font-size: 1rem;
+        }
+
+
+        &_image {
+            margin-top: 4rem;
+        }
+
+
+        &_image-frame {
+            max-width: 380px;
+        }
+
+    }
+
+}
+
+
+
+// ==========================================
+// MOBILE
+// ==========================================
+
+@media screen and (max-width: 540px) {
+
+    .home {
+        padding: 4rem 1rem;
+
+        text-align: center;
+
+
+
+        &_intro {
+            font-size: 0.75rem;
+        }
+
+
+
+        &_title {
+            font-size: 2.4rem;
+        }
+
+
+
+        &_subtitle {
+            font-size: 1.2rem;
+        }
+
+
+
+        &_text {
+            font-size: 1rem;
+        }
+
+
+
+        &_buttons {
+            justify-content: center;
+        }
+
+
+
+        &_image {
+            margin-top: 3.5rem;
+        }
+
+
+
+        &_image-frame {
+            max-width: 300px;
+        }
+
+
+
+        &_glow {
+            width: 350px;
+            height: 350px;
+
+            right: -180px;
+        }
+
+    }
+
+}

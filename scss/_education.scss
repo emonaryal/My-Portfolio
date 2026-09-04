@@ -1,0 +1,45 @@
+// Education section
+.education {
+    min-height: 100vh;
+    padding: 6rem 1rem;
+
+    &_title {
+        text-align: center;
+        color: $secondary-color;
+        font-size: $font-size-large;
+        margin-bottom: 3rem;
+    }
+
+    &_item {
+        padding: 2rem;
+        background: $grey-color;
+        color: $text-color;
+        border-left: 5px solid $secondary-color;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px $shadow-dark;
+
+        @include transition-ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            color: $secondary-color;
+            margin-bottom: 0.5rem;
+        }
+
+        h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            line-height: 1.8;
+        }
+
+        .education_date {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+// Smooth transition
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+// Centre content using flexbox
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Small devices
+@mixin media-sm {
+    @media screen and (min-width: 540px) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin media-md {
+    @media screen and (min-width: 720px) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin media-lg {
+    @media screen and (min-width: 960px) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin media-xl {
+    @media screen and (min-width: 1140px) {
+        @content;
+    }
+}

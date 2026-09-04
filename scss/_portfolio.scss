@@ -1,0 +1,95 @@
+// Portfolio section
+.portfolio {
+    min-height: 100vh;
+    padding: 6rem 1rem;
+    background: $grey-color;
+    color: $text-color;
+
+    &_title {
+        text-align: center;
+        color: $secondary-color;
+        font-size: $font-size-large;
+        margin-bottom: 3rem;
+    }
+
+    &_item {
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        background: $light-color;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px $shadow-dark;
+
+        @include transition-ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio_content {
+            text-align: center;
+
+            h3 {
+                color: $secondary-color;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                line-height: 1.7;
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            padding: 2rem;
+
+            background: $primary-color;
+            color: $light-color;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            opacity: 0;
+
+            h3 {
+                color: $secondary-color;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                line-height: 1.7;
+                margin-bottom: 0;
+            }
+        }
+
+        &.show-overlay {
+            .overlay {
+                animation: fadeIn 1s ease forwards;
+            }
+        }
+    }
+}
+
+
+// Fade-in animation
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

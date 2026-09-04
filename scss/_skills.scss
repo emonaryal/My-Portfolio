@@ -1,0 +1,294 @@
+// ==========================================
+// SKILLS SECTION
+// ==========================================
+
+.skills {
+    padding: 6rem 1rem;
+    background: $grey-color;
+    color: $text-color;
+
+
+    &_title {
+        text-align: center;
+        color: $secondary-color;
+        font-size: $font-size-large;
+        font-weight: bold;
+        margin-bottom: 3rem;
+    }
+
+
+    // ======================================
+    // SKILL CARD
+    // ======================================
+
+    &_item {
+        height: calc(100% - 2rem);
+
+        margin-bottom: 2rem;
+        padding: 2.8rem 1.5rem;
+
+        background: $light-color;
+
+        border-radius: 12px;
+        border-top: 6px solid $secondary-color;
+
+        box-shadow: 0 5px 15px $shadow-dark;
+
+        text-align: center;
+
+        @include transition-ease;
+
+
+        &:hover {
+            transform: translateY(-6px);
+
+            box-shadow: 0 10px 25px $shadow-dark;
+        }
+
+
+        h3 {
+            margin-bottom: 2rem;
+
+            color: $primary-color;
+
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+    }
+
+
+    // ======================================
+    // CIRCLE AREA
+    // ======================================
+
+    &_progress {
+        position: relative;
+
+        width: 160px;
+        height: 160px;
+
+        margin: 0 auto 2rem;
+    }
+
+
+    // SVG
+    &_progress-svg {
+        display: block;
+
+        width: 160px !important;
+        height: 160px !important;
+
+        max-width: 160px;
+
+        overflow: visible;
+
+        transform: rotate(-90deg);
+    }
+
+
+    // ======================================
+    // GREY BACKGROUND CIRCLE
+    // ======================================
+
+    &_circle-bg {
+        fill: none !important;
+
+        stroke: #dddddd;
+
+        stroke-width: 10;
+
+        stroke-linecap: round;
+    }
+
+
+    // ======================================
+    // ORANGE LOADING CIRCLE
+    // ======================================
+
+    &_circle-progress {
+        fill: none !important;
+
+        stroke: $secondary-color;
+
+        stroke-width: 10;
+
+        stroke-linecap: round;
+
+        // Circumference of r = 70
+        stroke-dasharray: 440;
+
+        // Start completely empty
+        stroke-dashoffset: 440;
+
+        transition: stroke-dashoffset 0.1s linear;
+    }
+
+
+    // ======================================
+    // PERCENTAGE INSIDE CIRCLE
+    // ======================================
+
+    &_value {
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        width: 100%;
+
+        text-align: center;
+
+        color: $primary-color;
+
+        font-size: 1.6rem;
+        font-weight: bold;
+
+        line-height: 1;
+
+        z-index: 2;
+
+        pointer-events: none;
+
+
+        span {
+            color: $primary-color;
+        }
+    }
+
+
+    // ======================================
+    // SKILL TAGS
+    // ======================================
+
+    &_tags {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 0.7rem;
+
+
+        span {
+            display: inline-block;
+
+            padding: 0.55rem 1rem;
+
+            background: $light-color;
+
+            color: $text-color;
+
+            border: 1px solid $primary-color;
+
+            border-radius: 25px;
+
+            font-size: 0.9rem;
+
+            white-space: nowrap;
+
+            @include transition-ease;
+
+
+            &:hover {
+                background: $secondary-color;
+
+                color: $light-color;
+
+                border-color: $secondary-color;
+
+                transform: translateY(-3px);
+            }
+        }
+    }
+}
+
+
+// ==========================================
+// FORCE SVG CIRCLES TO NEVER BE BLACK
+// ==========================================
+
+.skills svg circle {
+    fill: none !important;
+}
+
+
+// ==========================================
+// TABLET
+// ==========================================
+
+@media screen and (max-width: 960px) {
+
+    .skills {
+
+        &_item {
+            padding: 2.5rem 1.2rem;
+        }
+
+    }
+
+}
+
+
+// ==========================================
+// MOBILE
+// ==========================================
+
+@media screen and (max-width: 540px) {
+
+    .skills {
+        padding: 5rem 1rem;
+
+
+        &_title {
+            font-size: 2rem;
+        }
+
+
+        &_item {
+            padding: 2rem 1rem;
+
+
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+
+        &_progress {
+            width: 150px;
+            height: 150px;
+        }
+
+
+        &_progress-svg {
+            width: 150px !important;
+            height: 150px !important;
+        }
+
+
+        &_value {
+            font-size: 1.5rem;
+        }
+
+
+        &_tags {
+
+            gap: 0.5rem;
+
+
+            span {
+                padding: 0.5rem 0.8rem;
+
+                font-size: 0.8rem;
+            }
+
+        }
+
+    }
+
+}
